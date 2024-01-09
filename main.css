@@ -30,6 +30,12 @@ a:hover {
     width: 150px;
 }
 
+.lists{
+    list-style-type: circle;
+    text-align: left;
+    padding: 0;
+}
+
 
 .icons {
     list-style-type: none;
