@@ -33,7 +33,7 @@ a:hover {
 
 .icons {
     list-style-type: none;
-    font-size: xx-large;
+    font-size: large;
     padding: 0;
     display: flex;
     justify-content: space-between;
