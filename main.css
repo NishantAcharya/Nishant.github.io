@@ -14,7 +14,7 @@ a:hover {
 }
 
 #content {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
@@ -32,7 +32,7 @@ a:hover {
 
 .lists {
     position: relative;
-    list-style-type: none;
+    list-style-type:circle;
     font-size: medium;
     padding: 0;
     display: flex;
@@ -40,7 +40,7 @@ a:hover {
     width: 80%;
     max-width: 320px;
     margin: 1em auto;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .icons {
