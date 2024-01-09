@@ -23,6 +23,7 @@ a:hover {
     max-width: 1000px;
     padding: 32px;
     line-height: 1.6em;
+    overflow: auto;
 }
 
 .avatar {
@@ -34,6 +35,7 @@ a:hover {
     list-style-type: circle;
     text-align: left;
     padding: 0;
+    margin: 0;
 }
 
 
