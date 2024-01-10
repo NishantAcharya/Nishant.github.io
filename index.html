@@ -1,100 +1,113 @@
 <!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
 
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Define title -->
-  <title>Nishant Acharya</title>
-
-  <!-- Include favicon. Use, e.g., https://favicon.io/ -->
-  <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
-
-  <!-- Include style sheets -->
-  <link rel="stylesheet" href="main.css" />
-
-  <!-- Fonts from Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet" />
-
-  <!-- Load FontAwesome (for icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" />
-
-  <!-- Load Academicons (for more icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css"
-    integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg=="
-    crossorigin="anonymous" />
+  <title>John Doe</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
-  <section id="content">
-<!-- Avatar image -->
-    <img src="professional.jpg" alt="Nish" class="avatar" />
 
-    <!-- Text -->
-    <h2>About Me</h2>
-    <p>I am currently a PhD student at <a href="https://cs.ucdavis.edu/graduate/graduate-group">Graduate Group of Computer Science</a> at <a href="https://www.ucdavis.edu/">UC Davis</a>.
-      I graduated with a Bachelor's in Computer Science from <a href="https://www.cics.umass.edu/"> UMass Amherst</a> in 2021, where I was awarded the Chancellor's Award.
-      For a detailed look at my work please take a look at my <a href="https://drive.google.com/file/d/1gBT77VZRw-5-1wXQ-zYBpWSZuJ-JeYTH/view?usp=sharing">Resume</a>.<br>
-      In my free time I enjoy solving board puzzles, writing and reading short poems, critiquing and making new food items and trying improvised comedy.
-    </p>
-    <h2 >Projects and Reports</h2>
-    <ul class="lists">
-      <li><a href="https://drive.google.com/file/d/1cNReXY_pIS4m11wddT3QeB563adDlzIl/view"> Transformers for logical reasoning</a> : <br> 
-        This study takes a look at how can we represent and generate the transformer block weights, such
-        that logical connections can be represented in a transformer.
-      </li>
-      <li><a href="https://drive.google.com/file/d/1Sfod1qUd93RlCNHVvZmdyCcbwyRRJgSq/view"> Emotion Based ADL Detection</a> : <br> 
-        The project utilizes emotional context to build a activity detection system for 
-        a spectrum of emotions. We achieve this using transfer learning over a similar dataset and emphasize that it is possible to use ambient sensing to provide long term care to the elderly.</li>
-      <li><a href="https://drive.google.com/file/d/1o-6EAsw1EB_O475S-TFYub32quIhKMTb/view">Analysis of Multimodal Timeseries Fusion using Boltzmann Machines</a> : <br> 
-        We explore the most popular ways of fusing multimodal data in a distributed way using boltzmann machines and provided an experimental algorithm to apply this in the MPC framework.
-      </li>
-      <li><a href="https://drive.google.com/file/d/1lsmsHdByHatRCOrpXHrFG8f81OHVWerB/view">Transformers for Classifying Multivariate Timeseries Data</a> : <br> 
-        We investigate a popular classification framework that uses a transformers for unsupervised learning of multivariate time series to train on
-        supervised learning tasks, and examine whether a similar accuracy can be achieved for low dimensional data.
-      </li>
-      <li><a href="https://github.com/NishantAcharya/kapok-android">Intermittent Network Disaster Management Application: Kapok</a> : <br> 
-        Inspired by RNRNs resolve in hurricane Maria and the nurses' resourcability in intermittent network conidtions, me and a team of developers under Dr. Leah Wing built a 
-        disaster management application for intermittent network conditions.
-      </li>
-      <li><a href="https://github.com/NishantAcharya/VectorBased_Instruction_set_Extension">RISC Vector Extension</a> : <br> 
-        I define a RISC based ISA from scratch for a 64 bit system and wrote programs in binary to demonstrate the vector extension on a matrix multiplication benchmark.
-      </li>
-      <li><a href="https://github.com/david-fisher/320-S20-Track2">Job Search Web Application</a> : <br> 
-        I create an AWS based job search web application in a multi-team collaboration.</li>
-      <li>RDT 3.0 Simulator : <br> 
-        I simulated a RDT 3.0 server and demonstrated the workings of TCP at application layer and calculated the utilization rate of the link for scenarios like, defined congestion rate, low traffic,unreliable data transfer.
-      </li>
-    </ul>
+
+<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+				  <li><a href="index.html">Home</a></li>
+				  <li><a href="#">Projects</a></li>
+				  <li><a href="#publications">Publications</a></li> 
+				  <li><a href="#">CV</a></li> 
+		  </ul>
+		</div>
+	  </div>
+	</nav>
   
-    <h2>Teaching Positions</h2>
-    <ul class="lists">
-      <li>Teaching Assistant ECS 152A: <b>Computer Networks</b></li>
-      <li>Teaching Assistant ECS 132: <b>Probability and Statistical Modeling for Computer Science</b></li>
-      <li>Teaching Assistant ECS 32B: <b>Introduction to Data Structures</b></li>
-      <li>Supplemental Instructor COMPSCI 121: <b>Introduction to Problem Solving with Computers</b></li>
-    </ul>
+  <!-- Page Content -->
+    <div class="container">
 
-    <!-- Icons -->
-    <ul class="icons">
-      <li>
-        <a href="mailto: nacharya@ucdavis.edu" title="E-Mail"><i class="fas fa-envelope"></i></a>
-      </li>
-      <li>
-        <a href="https://github.com/NishantAcharya" title="GitHub"><i class="fab fa-github"></i></a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/nishant-acharya-61a28b154/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      </li>
-    </ul>
-  </section>
+        <div class="row">
+
+            <!-- Entries Column -->
+            <div class="col-md-8" style="height: 100vh;">
+                
+                <!-- Main Image -->
+                <img class="img-responsive" src="photo.gif" alt=""><br>
+                
+                <div style="margin-top:3%; text-align:justify;">                
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing <a href="#">elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					
+					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+					
+					<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+            </div> 
+
+            <!-- Contact Info on the Sidebar -->
+            <div class="col-md-4">
+                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>John Doe</b></div><br>
+                <p><b>john at doe.com</b><br>
+                <p>Random Department<br>
+                University of Randomness<br>
+                Street<br>
+                City <br>
+                Country<br>
+                </p>
+            </div>
+            
+            
+            <!-- Links on the Sidebar -->
+            <div class="col-md-4" style="margin-top:2%">
+              <dd><a href="#">Google Scholar</a></dd> 
+              <dd><a href="#">Twitter</a></dd>
+              <dd><a href="#">LinkedIn</a></dd>
+            </div>
+            
+            
+            <!-- Publications -->
+            <div class="col-md-8" style="height: 100vh;">    
+                <h2 id="publications">Publications</h2>
+                
+                <strong>Peer-reviewed</strong><br/>
+                <ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a> Names of the authors</li>
+                </ul>
+            
+                <strong>Technical Reports</strong><br/>
+                <ul>
+                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a>. Details of the report</li>
+                </ul>
+            </div>
+
+            
+        </div>
+
+
+    </div>
+    <!-- /.container -->
+    
+    <!-- Other people may like it too! -->
+    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
+    
 </body>
 
 </html>
