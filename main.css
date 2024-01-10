@@ -20,13 +20,12 @@ a:hover {
     margin-right: -50%;
     transform: translate(-50%, -50%) ;
     text-align:center;
-    padding: 32px;
     line-height: 1.6em;
 }
 
 .avatar {
     border-radius: 30%;
-    width: 150px;
+    width: 24%;
 }
 
 .lists{
@@ -44,13 +43,13 @@ a:hover {
     display: flex;
     justify-content: space-between;
     width: 80%;
-    max-width: 320px;
+    max-width: 30%;
     margin: 1em auto;
 }
 
 .icons li {
     display: inline;
-    width: 30px;
+    width: 5%;
 }
 
 .icons a {
