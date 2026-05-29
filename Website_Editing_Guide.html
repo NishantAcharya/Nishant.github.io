@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Editing Guide</title>
+  <style>
+    /* ── Print-friendly base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #fff;
+      padding: 0;
+    }
+
+    /* ── Cover page ── */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
+      color: #fff;
+      padding: 60px 40px;
+      page-break-after: always;
+    }
+    .cover h1 {
+      font-size: 32pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .cover .subtitle {
+      font-size: 14pt;
+      opacity: 0.85;
+      max-width: 500px;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+    .cover .badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      padding: 10px 24px;
+      font-size: 10pt;
+      letter-spacing: 0.5px;
+    }
+    .cover .toc-preview {
+      margin-top: 48px;
+      text-align: left;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 24px 32px;
+      min-width: 340px;
+    }
+    .cover .toc-preview h3 {
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      opacity: 0.7;
+    }
+    .cover .toc-preview ol {
+      list-style: decimal inside;
+      font-size: 10.5pt;
+      line-height: 2;
+    }
+
+    /* ── Content wrapper ── */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 56px;
+    }
+
+    /* ── Headings ── */
+    h1.page-title {
+      font-size: 22pt;
+      font-weight: 800;
+      color: #1a237e;
+      border-bottom: 3px solid #1565c0;
+      padding-bottom: 10px;
+      margin-bottom: 6px;
+    }
+    h2.section {
+      font-size: 15pt;
+      font-weight: 700;
+      color: #1a237e;
+      margin-top: 36px;
+      margin-bottom: 8px;
+      border-left: 4px solid #1565c0;
+      padding-left: 12px;
+    }
+    h3.sub {
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: #283593;
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+
+    /* ── Body text ── */
+    p { margin-bottom: 10px; }
+    ul, ol { padding-left: 22px; margin-bottom: 10px; }
+    li { margin-bottom: 4px; }
+
+    /* ── File path labels ── */
+    .filepath {
+      display: inline-block;
+      background: #e8eaf6;
+      color: #1a237e;
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 9.5pt;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #c5cae9;
+    }
+
+    /* ── Code blocks ── */
+    .code-block {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-left: 4px solid #1565c0;
+      border-radius: 0 6px 6px 0;
+      padding: 14px 18px;
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 9pt;
+      line-height: 1.7;
+      margin: 12px 0 16px;
+      white-space: pre;
+      overflow-x: auto;
+      color: #212121;
+    }
+    .code-block .comment { color: #5c6bc0; }
+    .code-block .key { color: #1565c0; font-weight: 600; }
+    .code-block .value { color: #2e7d32; }
+    .code-block .highlight { background: #fff9c4; }
+
+    /* ── Callout boxes ── */
+    .callout {
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 10.5pt;
+    }
+    .callout.tip {
+      background: #e8f5e9;
+      border-left: 4px solid #388e3c;
+      color: #1b5e20;
+    }
+    .callout.tip::before { content: "✅  TIP: "; font-weight: 700; }
+    .callout.note {
+      background: #e3f2fd;
+      border-left: 4px solid #1565c0;
+      color: #0d47a1;
+    }
+    .callout.note::before { content: "ℹ️  NOTE: "; font-weight: 700; }
+    .callout.warning {
+      background: #fff8e1;
+      border-left: 4px solid #f9a825;
+      color: #6d4c00;
+    }
+    .callout.warning::before { content: "⚠️  IMPORTANT: "; font-weight: 700; }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 10pt;
+    }
+    th {
+      background: #1a237e;
+      color: #fff;
+      text-align: left;
+      padding: 9px 14px;
+      font-weight: 600;
+    }
+    td {
+      padding: 8px 14px;
+      border-bottom: 1px solid #e0e0e0;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f5f5f5; }
+    td code {
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 9pt;
+      background: #e8eaf6;
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: #1a237e;
+    }
+
+    /* ── Section divider ── */
+    .divider {
+      border: none;
+      border-top: 2px solid #e8eaf6;
+      margin: 30px 0;
+    }
+
+    /* ── Step numbers ── */
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+    .steps li::before {
+      content: counter(step);
+      background: #1565c0;
+      color: #fff;
+      font-weight: 700;
+      font-size: 9pt;
+      min-width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ── Page breaks for printing ── */
+    .page-break { page-break-before: always; }
+
+    /* ── Print overrides ── */
+    @media print {
+      body { font-size: 10pt; }
+      .cover { min-height: 100vh; page-break-after: always; }
+      .content { padding: 32px 40px; }
+      a { color: inherit; text-decoration: none; }
+      .code-block { font-size: 8.5pt; }
+    }
+
+    /* ── Section header band ── */
+    .section-band {
+      background: linear-gradient(90deg, #1a237e, #1565c0);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 10pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ COVER PAGE ═══════════════════ -->
+<div class="cover">
+  <h1>Website Editing Guide</h1>
+  <div class="subtitle">A complete reference for editing text, links, images, and content on your Academic Pages / Jekyll portfolio site</div>
+  <div class="badge">Nishant.github.io — Academic Pages (Jekyll)</div>
+  <div class="toc-preview">
+    <h3>Contents</h3>
+    <ol>
+      <li>Project Structure Overview</li>
+      <li>Site-Wide Settings &amp; Profile (_config.yml)</li>
+      <li>Navigation Bar</li>
+      <li>Home / About Page</li>
+      <li>Profile Photo &amp; Images</li>
+      <li>CV Page</li>
+      <li>Publications</li>
+      <li>Talks</li>
+      <li>Teaching</li>
+      <li>Blog Posts</li>
+      <li>Uploading Files (PDFs)</li>
+      <li>Markdown Quick Reference</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════════ MAIN CONTENT ═══════════════════ -->
+<div class="content">
+
+  <!-- ──────────────────── 1. OVERVIEW ──────────────────── -->
+  <h1 class="page-title">1 &nbsp; Project Structure Overview</h1>
+  <p>Your website is built with <strong>Jekyll</strong> and hosted on <strong>GitHub Pages</strong>. You never touch raw HTML for regular edits — almost everything is controlled by simple text files using YAML (settings) and Markdown (content).</p>
+
+  <h3 class="sub">Key folders and files at a glance</h3>
+  <table>
+    <tr><th>Path</th><th>What it controls</th></tr>
+    <tr><td><code>_config.yml</code></td><td>Global site settings — your name, bio, social links, profile photo filename</td></tr>
+    <tr><td><code>_data/navigation.yml</code></td><td>Top navigation bar links and their order</td></tr>
+    <tr><td><code>_pages/about.md</code></td><td>Home page body text</td></tr>
+    <tr><td><code>_pages/cv.md</code></td><td>CV / Resume page content</td></tr>
+    <tr><td><code>_publications/*.md</code></td><td>One file per publication entry</td></tr>
+    <tr><td><code>_talks/*.md</code></td><td>One file per talk or presentation</td></tr>
+    <tr><td><code>_teaching/*.md</code></td><td>One file per teaching position</td></tr>
+    <tr><td><code>_posts/*.md</code></td><td>Blog post entries</td></tr>
+    <tr><td><code>images/</code></td><td>Photos and images used anywhere on the site</td></tr>
+    <tr><td><code>files/</code></td><td>Downloadable files — PDFs, ZIPs, etc.</td></tr>
+  </table>
+
+  <div class="callout note">Every time you save and push a file to GitHub, the site automatically rebuilds within ~1–2 minutes. You do not need to run any build commands manually.</div>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 2. CONFIG ──────────────────── -->
+  <h1 class="page-title page-break">2 &nbsp; Site-Wide Settings &amp; Profile</h1>
+  <p>File: <span class="filepath">_config.yml</span></p>
+  <p>This single file controls your name, tagline, sidebar bio, profile photo, and all social/academic links. Open it in any text editor and look for the fields described below.</p>
+
+  <h2 class="section">2.1 &nbsp; Your Name &amp; Site Title</h2>
+  <div class="code-block"><span class="key">title</span>: <span class="value">"Your Name / Site Title"</span>       <span class="comment"># shown in the browser tab</span>
+<span class="key">name</span>: &amp;name <span class="value">"Your Full Name"</span>           <span class="comment"># used throughout the site</span>
+<span class="key">description</span>: &amp;description <span class="value">"Your description"</span></div>
+  <ul>
+    <li>Replace <code>"Your Name / Site Title"</code> with something like <code>"Jane Smith | PhD Researcher"</code>.</li>
+    <li>The <code>&amp;name</code> syntax is a YAML anchor — changing it here updates every place it is referenced.</li>
+  </ul>
+
+  <h2 class="section">2.2 &nbsp; Sidebar Bio &amp; Location</h2>
+  <div class="code-block"><span class="key">author</span>:
+  <span class="key">avatar</span>: <span class="value">"profile.png"</span>          <span class="comment"># filename of your photo inside images/</span>
+  <span class="key">name</span>: <span class="value">"Your Sidebar Name"</span>
+  <span class="key">pronouns</span>: <span class="value">"she/her"</span>           <span class="comment"># optional, leave blank to hide</span>
+  <span class="key">bio</span>: <span class="value">"Short biography for the left-hand sidebar"</span>
+  <span class="key">location</span>: <span class="value">"New York, USA"</span>
+  <span class="key">employer</span>: <span class="value">"MIT"</span>
+  <span class="key">email</span>: <span class="value">"you@example.com"</span></div>
+  <ul>
+    <li><strong>avatar</strong> — the filename of your profile photo. The file must exist in the <span class="filepath">images/</span> folder. See Section 5 for how to change it.</li>
+    <li>Leave any field blank (just a space after the colon) to hide it from the sidebar entirely.</li>
+  </ul>
+
+  <h2 class="section">2.3 &nbsp; Social &amp; Academic Links</h2>
+  <p>Below the <code>author:</code> section you will find fields for every major platform. Paste the full URL (or just a username where indicated):</p>
+  <div class="code-block">  <span class="key">googlescholar</span>: <span class="value">"https://scholar.google.com/citations?user=XXXX"</span>
+  <span class="key">github</span>: <span class="value">"yourgithubusername"</span>     <span class="comment"># username only, not full URL</span>
+  <span class="key">linkedin</span>: <span class="value">"yourlinkedinusername"</span>  <span class="comment"># username only</span>
+  <span class="key">twitter</span>: <span class="value">"yourhandle"</span>            <span class="comment"># without @</span>
+  <span class="key">orcid</span>: <span class="value">"https://orcid.org/0000-0000-0000-0000"</span>
+  <span class="key">email</span>: <span class="value">"you@university.edu"</span></div>
+  <div class="callout tip">Any field that is left blank will simply not appear as an icon in the sidebar — you will never see a broken icon.</div>
+
+  <h2 class="section">2.4 &nbsp; Site URL (important before publishing)</h2>
+  <div class="code-block"><span class="key">url</span>: <span class="value">"https://yourgithubusername.github.io"</span>
+<span class="key">baseurl</span>: <span class="value">""</span>                       <span class="comment"># leave blank unless in a sub-folder repo</span>
+<span class="key">repository</span>: <span class="value">"yourgithubusername/yourgithubusername.github.io"</span></div>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 3. NAVIGATION ──────────────────── -->
+  <h1 class="page-title page-break">3 &nbsp; Navigation Bar</h1>
+  <p>File: <span class="filepath">_data/navigation.yml</span></p>
+  <p>This file controls which links appear in the top header bar and in what order.</p>
+
+  <h2 class="section">3.1 &nbsp; Current structure</h2>
+  <div class="code-block"><span class="key">main</span>:
+  - <span class="key">title</span>: <span class="value">"Talks"</span>
+    <span class="key">url</span>: <span class="value">/talks/</span>
+
+  - <span class="key">title</span>: <span class="value">"Teaching"</span>
+    <span class="key">url</span>: <span class="value">/teaching/</span>
+
+  - <span class="key">title</span>: <span class="value">"Blog Posts"</span>
+    <span class="key">url</span>: <span class="value">/year-archive/</span>
+
+  - <span class="key">title</span>: <span class="value">"CV"</span>
+    <span class="key">url</span>: <span class="value">/cv/</span></div>
+
+  <h2 class="section">3.2 &nbsp; How to edit</h2>
+  <ul class="steps">
+    <li>To <strong>rename</strong> a link, change the <code>title:</code> value — e.g. <code>"Blog Posts"</code> → <code>"Articles"</code>.</li>
+    <li>To <strong>reorder</strong> links, cut and paste entire <code>- title / url</code> blocks into the desired position.</li>
+    <li>To <strong>remove</strong> a link, comment it out by adding <code># </code> in front of both lines, or delete the two lines entirely.</li>
+    <li>To <strong>add</strong> a link to an external site, add a new block with the full URL:<br>
+      <code style="font-family:monospace; font-size:9pt;">- title: "My Lab"\n    url: https://mylab.university.edu</code></li>
+    <li>To <strong>add Publications</strong> back, uncomment the block that starts with <code># - title: "Publications"</code>.</li>
+  </ul>
+
+  <div class="callout warning">Indentation in YAML uses spaces, not tabs. Each level must be indented by exactly 2 spaces or the file will fail to parse and your site will not build.</div>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 4. HOME PAGE ──────────────────── -->
+  <h1 class="page-title page-break">4 &nbsp; Home / About Page</h1>
+  <p>File: <span class="filepath">_pages/about.md</span></p>
+  <p>This is the first page visitors see. It is a standard Markdown file with a small YAML header at the top (called "front matter").</p>
+
+  <h2 class="section">4.1 &nbsp; Front matter (top of file)</h2>
+  <div class="code-block"><span class="comment">---</span>
+<span class="key">permalink</span>: <span class="value">/</span>                     <span class="comment"># keeps this as the homepage — do not change</span>
+<span class="key">title</span>: <span class="value">"Jane Smith — Researcher"</span>  <span class="comment"># displayed as the page heading</span>
+<span class="key">author_profile</span>: <span class="value">true</span>            <span class="comment"># shows sidebar — set false to hide</span>
+<span class="comment">---</span></div>
+
+  <h2 class="section">4.2 &nbsp; Body text</h2>
+  <p>Everything below the closing <code>---</code> is the page body written in Markdown. You can:</p>
+  <ul>
+    <li>Write plain paragraphs — just type and press Enter twice between paragraphs.</li>
+    <li>Add headings with <code>#</code>, <code>##</code>, or <code>======</code> underlines.</li>
+    <li>Add links: <code>[link text](https://url.com)</code></li>
+    <li>Add bold: <code>**bold text**</code></li>
+    <li>Add bullet lists with <code>-</code> or <code>*</code> at the start of a line.</li>
+  </ul>
+
+  <h2 class="section">4.3 &nbsp; Adding an image inline</h2>
+  <p>Place the image file in the <span class="filepath">images/</span> folder, then reference it in the Markdown:</p>
+  <div class="code-block">![Alt description text](/images/your-image-filename.jpg)</div>
+  <p>To control the size, use an HTML img tag instead:</p>
+  <div class="code-block">&lt;img src="/images/your-image-filename.jpg" width="400" alt="Description" /&gt;</div>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 5. IMAGES ──────────────────── -->
+  <h1 class="page-title page-break">5 &nbsp; Profile Photo &amp; Images</h1>
+
+  <h2 class="section">5.1 &nbsp; Changing your profile/sidebar photo</h2>
+  <ol class="steps">
+    <li>Prepare a square photo (recommended minimum 300×300 px). Ideally crop it to a square so it displays correctly in the circular frame.</li>
+    <li>Name the file something simple, e.g. <code>profile.png</code> or <code>photo.jpg</code>.</li>
+    <li>Upload (copy) it into the <span class="filepath">images/</span> folder in your project.</li>
+    <li>Open <span class="filepath">_config.yml</span> and update the <code>avatar</code> field to match your exact filename:
+      <div class="code-block">  <span class="key">avatar</span>: <span class="value">"photo.jpg"</span></div>
+    </li>
+  </ol>
+  <div class="callout tip">The filename is case-sensitive. <code>Photo.JPG</code> and <code>photo.jpg</code> are different files on Linux servers (GitHub Pages runs Linux).</div>
+
+  <h2 class="section">5.2 &nbsp; Using images in page content</h2>
+  <p>Any image file placed in <span class="filepath">images/</span> can be referenced from any Markdown page:</p>
+  <table>
+    <tr><th>What you want</th><th>Markdown / HTML to write</th></tr>
+    <tr><td>Basic image</td><td><code>![Description](/images/file.png)</code></td></tr>
+    <tr><td>Image with fixed width</td><td><code>&lt;img src="/images/file.png" width="300"&gt;</code></td></tr>
+    <tr><td>Centered image</td><td><code>&lt;p align="center"&gt;&lt;img src="/images/file.png"&gt;&lt;/p&gt;</code></td></tr>
+    <tr><td>Image as a link</td><td><code>[![Alt](/images/file.png)](https://example.com)</code></td></tr>
+  </table>
+
+  <h2 class="section">5.3 &nbsp; Supported image formats</h2>
+  <p>PNG, JPG/JPEG, GIF, SVG, and WebP are all supported. Keep file sizes reasonable — large images slow down page loads. Aim for under 500 KB per image for web use.</p>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 6. CV ──────────────────── -->
+  <h1 class="page-title page-break">6 &nbsp; CV Page</h1>
+  <p>File: <span class="filepath">_pages/cv.md</span></p>
+  <p>The CV page is a Markdown file where you write your resume content directly. The Publications, Talks, and Teaching sections are auto-populated from their respective folders, but Education, Work Experience, and Skills are typed manually.</p>
+
+  <h2 class="section">6.1 &nbsp; Editing Education &amp; Work Experience</h2>
+  <div class="code-block"><span class="key">Education</span>
+======
+* Ph.D in Computer Science, MIT, 2024
+* M.S. in Machine Learning, Stanford, 2020
+* B.S. in Mathematics, UCLA, 2018
+
+<span class="key">Work Experience</span>
+======
+* 2022–2024: Research Scientist
+  * Google DeepMind
+  * Developed models for X and Y
+  * Supervisor: Dr. Lastname
+
+* 2020–2022: Graduate Research Assistant
+  * Stanford University, AI Lab</div>
+
+  <h2 class="section">6.2 &nbsp; Adding a Skills section</h2>
+  <div class="code-block"><span class="key">Skills</span>
+======
+* Programming: Python, R, C++, Julia
+* Frameworks: PyTorch, TensorFlow, JAX
+  * Deep Learning
+  * Reinforcement Learning
+* Languages: English (native), Spanish (conversational)</div>
+
+  <h2 class="section">6.3 &nbsp; Auto-populated sections</h2>
+  <p>The following sections in cv.md automatically pull from their folders — you do NOT edit them here:</p>
+  <table>
+    <tr><th>Section in CV</th><th>Data comes from</th></tr>
+    <tr><td>Publications</td><td><span class="filepath">_publications/*.md</span></td></tr>
+    <tr><td>Talks</td><td><span class="filepath">_talks/*.md</span></td></tr>
+    <tr><td>Teaching</td><td><span class="filepath">_teaching/*.md</span></td></tr>
+  </table>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 7. PUBLICATIONS ──────────────────── -->
+  <h1 class="page-title page-break">7 &nbsp; Publications</h1>
+  <p>Folder: <span class="filepath">_publications/</span></p>
+  <p>Each publication is its own <code>.md</code> file. The filename format is <code>YYYY-MM-DD-short-title.md</code> — the date controls sort order.</p>
+
+  <h2 class="section">7.1 &nbsp; Publication file template</h2>
+  <div class="code-block"><span class="comment">---</span>
+<span class="key">title</span>: <span class="value">"Full Title of Your Paper"</span>
+<span class="key">collection</span>: <span class="value">publications</span>
+<span class="key">category</span>: <span class="value">manuscripts</span>     <span class="comment"># options: manuscripts | conferences | books</span>
+<span class="key">permalink</span>: <span class="value">/publication/2024-paper-short-name</span>
+<span class="key">excerpt</span>: <span class="value">'One or two sentence summary shown in the list view.'</span>
+<span class="key">date</span>: <span class="value">2024-06-15</span>
+<span class="key">venue</span>: <span class="value">'Nature, Vol. 12'</span>
+<span class="key">paperurl</span>: <span class="value">'https://doi.org/10.xxxx/xxxxx'</span>   <span class="comment"># or /files/paper.pdf</span>
+<span class="key">citation</span>: <span class="value">'Smith, J. (2024). &amp;quot;Title.&amp;quot; &lt;i&gt;Nature&lt;/i&gt;. 12(1).'</span>
+<span class="comment">---</span>
+
+Full abstract or description goes here. Supports all Markdown formatting.</div>
+
+  <h2 class="section">7.2 &nbsp; Adding a new publication</h2>
+  <ol class="steps">
+    <li>Copy any existing file in <span class="filepath">_publications/</span>.</li>
+    <li>Rename it to match the date and title, e.g. <code>2024-09-01-my-new-paper.md</code>.</li>
+    <li>Edit all the fields in the front matter (between the <code>---</code> markers).</li>
+    <li>If you have a PDF, copy it to <span class="filepath">files/</span> and set <code>paperurl: '/files/mypaper.pdf'</code>.</li>
+  </ol>
+
+  <h2 class="section">7.3 &nbsp; Changing publication categories</h2>
+  <table>
+    <tr><th>category: value</th><th>Appears under heading</th></tr>
+    <tr><td><code>manuscripts</code></td><td>Journal Articles</td></tr>
+    <tr><td><code>conferences</code></td><td>Conference Papers</td></tr>
+    <tr><td><code>books</code></td><td>Books</td></tr>
+  </table>
+  <p>The heading labels can be changed in <span class="filepath">_config.yml</span> under the <code>publication_category:</code> section.</p>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 8. TALKS ──────────────────── -->
+  <h1 class="page-title page-break">8 &nbsp; Talks</h1>
+  <p>Folder: <span class="filepath">_talks/</span></p>
+  <p>Each talk is its own <code>.md</code> file. Same naming convention: <code>YYYY-MM-DD-talk-title.md</code>.</p>
+
+  <h2 class="section">8.1 &nbsp; Talk file template</h2>
+  <div class="code-block"><span class="comment">---</span>
+<span class="key">title</span>: <span class="value">"Title of Your Talk"</span>
+<span class="key">collection</span>: <span class="value">talks</span>
+<span class="key">type</span>: <span class="value">"Conference talk"</span>      <span class="comment"># e.g. "Invited talk", "Tutorial", "Poster"</span>
+<span class="key">permalink</span>: <span class="value">/talks/2024-06-my-talk</span>
+<span class="key">venue</span>: <span class="value">"NeurIPS 2024"</span>
+<span class="key">date</span>: <span class="value">2024-12-10</span>
+<span class="key">location</span>: <span class="value">"Vancouver, BC, Canada"</span>
+<span class="key">slidesurl</span>: <span class="value">'/files/slides_neurips24.pdf'</span>  <span class="comment"># optional</span>
+<span class="key">paperurl</span>: <span class="value">'https://arxiv.org/abs/xxxx'</span>       <span class="comment"># optional</span>
+<span class="comment">---</span>
+
+Abstract or description of the talk. You can write as much as you like here.</div>
+
+  <h2 class="section">8.2 &nbsp; Adding a new talk</h2>
+  <ol class="steps">
+    <li>Create a new file in <span class="filepath">_talks/</span> with the date-based filename format.</li>
+    <li>Fill in the front matter fields above.</li>
+    <li>Write a description in the body (below the second <code>---</code>).</li>
+  </ol>
+  <div class="callout tip">The <code>type</code> field is displayed as a label on the Talks page. Common values: "Conference talk", "Invited talk", "Workshop", "Tutorial", "Poster".</div>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 9. TEACHING ──────────────────── -->
+  <h1 class="page-title page-break">9 &nbsp; Teaching</h1>
+  <p>Folder: <span class="filepath">_teaching/</span></p>
+
+  <h2 class="section">9.1 &nbsp; Teaching file template</h2>
+  <div class="code-block"><span class="comment">---</span>
+<span class="key">title</span>: <span class="value">"Course Title"</span>
+<span class="key">collection</span>: <span class="value">teaching</span>
+<span class="key">type</span>: <span class="value">"Graduate course"</span>    <span class="comment"># e.g. "Undergraduate course", "Workshop"</span>
+<span class="key">permalink</span>: <span class="value">/teaching/2024-fall-course-name</span>
+<span class="key">venue</span>: <span class="value">"MIT, Department of EECS"</span>
+<span class="key">date</span>: <span class="value">2024-09-01</span>
+<span class="key">location</span>: <span class="value">"Cambridge, MA"</span>
+<span class="comment">---</span>
+
+Description of the course, your role, topics covered, etc.</div>
+
+  <h2 class="section">9.2 &nbsp; Adding a new course</h2>
+  <ol class="steps">
+    <li>Copy an existing file in <span class="filepath">_teaching/</span>.</li>
+    <li>Rename it with the semester and course, e.g. <code>2024-fall-intro-ml.md</code>.</li>
+    <li>Edit the front matter and body text.</li>
+  </ol>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 10. BLOG POSTS ──────────────────── -->
+  <h1 class="page-title page-break">10 &nbsp; Blog Posts</h1>
+  <p>Folder: <span class="filepath">_posts/</span></p>
+  <p>Blog post filenames must follow the exact format <code>YYYY-MM-DD-title-slug.md</code> — Jekyll requires this.</p>
+
+  <h2 class="section">10.1 &nbsp; Blog post template</h2>
+  <div class="code-block"><span class="comment">---</span>
+<span class="key">title</span>: <span class="value">"My Blog Post Title"</span>
+<span class="key">date</span>: <span class="value">2024-06-15</span>
+<span class="key">permalink</span>: <span class="value">/posts/2024/06/my-post-title/</span>
+<span class="key">tags</span>:
+  - <span class="value">machine-learning</span>
+  - <span class="value">research</span>
+<span class="comment">---</span>
+
+Your post content here. Use full Markdown formatting:
+**bold**, *italic*, [links](https://url.com), etc.
+
+## Section Heading
+
+More text...</div>
+
+  <h2 class="section">10.2 &nbsp; Adding a new blog post</h2>
+  <ol class="steps">
+    <li>Create a new file in <span class="filepath">_posts/</span> with the exact filename format, e.g. <code>2024-06-15-my-research-update.md</code>.</li>
+    <li>Write the front matter with at minimum <code>title</code>, <code>date</code>, and <code>permalink</code>.</li>
+    <li>Write your post content below the closing <code>---</code>.</li>
+  </ol>
+  <div class="callout note">Posts whose date is in the future will not appear unless <code>future: true</code> is set in <code>_config.yml</code>. Your config already has this set to <code>true</code>.</div>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 11. FILES ──────────────────── -->
+  <h1 class="page-title page-break">11 &nbsp; Uploading Files (PDFs, etc.)</h1>
+  <p>Folder: <span class="filepath">files/</span></p>
+  <p>Anything placed in the <span class="filepath">files/</span> folder is publicly accessible at <code>https://yourusername.github.io/files/filename.pdf</code>.</p>
+
+  <h2 class="section">11.1 &nbsp; How to add a file</h2>
+  <ol class="steps">
+    <li>Copy your PDF (or any file) into the <span class="filepath">files/</span> folder.</li>
+    <li>Commit and push to GitHub (or upload via the GitHub web interface).</li>
+    <li>Link to it from any Markdown page using: <code>[Download PDF](/files/myfile.pdf)</code></li>
+  </ol>
+
+  <h2 class="section">11.2 &nbsp; Linking to a CV PDF</h2>
+  <p>A common use case is a downloadable CV. Copy your CV PDF to <span class="filepath">files/cv.pdf</span> and then in <span class="filepath">_pages/cv.md</span> add:</p>
+  <div class="code-block">Download a PDF version of my CV [here](/files/cv.pdf).</div>
+
+  <h2 class="section">11.3 &nbsp; Current files in this project</h2>
+  <table>
+    <tr><th>File</th><th>Access URL</th></tr>
+    <tr><td><code>paper1.pdf</code></td><td><code>/files/paper1.pdf</code></td></tr>
+    <tr><td><code>paper2.pdf</code></td><td><code>/files/paper2.pdf</code></td></tr>
+    <tr><td><code>slides1.pdf</code></td><td><code>/files/slides1.pdf</code></td></tr>
+  </table>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── 12. MARKDOWN ──────────────────── -->
+  <h1 class="page-title page-break">12 &nbsp; Markdown Quick Reference</h1>
+  <p>All page content (about, cv, publications, talks, posts) is written in Markdown. Here is everything you need for everyday edits.</p>
+
+  <table>
+    <tr><th>What you want</th><th>Markdown syntax</th><th>Result</th></tr>
+    <tr><td>Large heading</td><td><code># Heading</code></td><td><strong>Big bold heading</strong></td></tr>
+    <tr><td>Sub-heading</td><td><code>## Sub-heading</code></td><td><strong>Smaller heading</strong></td></tr>
+    <tr><td>Heading (underline style)</td><td><code>Title<br>======</code></td><td>Same as <code>#</code></td></tr>
+    <tr><td>Bold text</td><td><code>**bold**</code></td><td><strong>bold</strong></td></tr>
+    <tr><td>Italic text</td><td><code>*italic*</code></td><td><em>italic</em></td></tr>
+    <tr><td>Hyperlink</td><td><code>[text](https://url.com)</code></td><td>Clickable link</td></tr>
+    <tr><td>Image</td><td><code>![alt text](/images/file.png)</code></td><td>Displayed image</td></tr>
+    <tr><td>Bullet list</td><td><code>- Item 1<br>- Item 2</code></td><td>• Item 1 • Item 2</td></tr>
+    <tr><td>Numbered list</td><td><code>1. First<br>2. Second</code></td><td>1. First 2. Second</td></tr>
+    <tr><td>Inline code</td><td><code>\`code\`</code></td><td><code>code</code></td></tr>
+    <tr><td>Horizontal rule</td><td><code>---</code> (on its own line)</td><td>Divider line</td></tr>
+    <tr><td>Paragraph break</td><td>One blank line between paragraphs</td><td>New paragraph</td></tr>
+    <tr><td>Line break</td><td>Two spaces at end of line then Enter</td><td>New line, same paragraph</td></tr>
+  </table>
+
+  <h2 class="section">12.1 &nbsp; Linking to a downloadable file</h2>
+  <div class="code-block">Download my paper [here](/files/paper1.pdf).
+View my slides [PDF](/files/slides1.pdf).</div>
+
+  <h2 class="section">12.2 &nbsp; Linking to an external website</h2>
+  <div class="code-block">Visit [Google Scholar](https://scholar.google.com) for more.
+Check out the [project repository](https://github.com/you/repo).</div>
+
+  <h2 class="section">12.3 &nbsp; Embedding a YouTube video</h2>
+  <p>Markdown does not support videos natively, but you can use an HTML iframe:</p>
+  <div class="code-block">&lt;iframe width="560" height="315"
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</div>
+  <p>Replace <code>VIDEO_ID</code> with the ID from the YouTube URL (the part after <code>v=</code>).</p>
+
+  <hr class="divider" />
+
+  <!-- ──────────────────── QUICK REFERENCE TABLE ──────────────────── -->
+  <h1 class="page-title page-break">Quick Reference — Where Is What?</h1>
+
+  <div class="section-band">Common Edit Tasks → File to Open</div>
+
+  <table>
+    <tr><th>I want to change…</th><th>Open this file</th><th>Field / Section</th></tr>
+    <tr><td>My name everywhere on the site</td><td><code>_config.yml</code></td><td><code>name:</code> and <code>author: name:</code></td></tr>
+    <tr><td>My sidebar bio</td><td><code>_config.yml</code></td><td><code>author: bio:</code></td></tr>
+    <tr><td>My profile photo</td><td><code>_config.yml</code> + <code>images/</code></td><td><code>author: avatar:</code> + photo file</td></tr>
+    <tr><td>My email / social links</td><td><code>_config.yml</code></td><td>Under <code>author:</code> section</td></tr>
+    <tr><td>The top navigation links</td><td><code>_data/navigation.yml</code></td><td><code>title:</code> and <code>url:</code></td></tr>
+    <tr><td>The homepage text</td><td><code>_pages/about.md</code></td><td>Body below the <code>---</code></td></tr>
+    <tr><td>My CV / resume content</td><td><code>_pages/cv.md</code></td><td>Education, Work, Skills sections</td></tr>
+    <tr><td>A publication entry</td><td><code>_publications/YYYY-MM-DD-name.md</code></td><td>Front matter fields</td></tr>
+    <tr><td>A talk entry</td><td><code>_talks/YYYY-MM-DD-name.md</code></td><td>Front matter fields</td></tr>
+    <tr><td>A teaching entry</td><td><code>_teaching/YYYY-MM-DD-name.md</code></td><td>Front matter fields</td></tr>
+    <tr><td>A blog post</td><td><code>_posts/YYYY-MM-DD-title.md</code></td><td>Front matter + body</td></tr>
+    <tr><td>Add a downloadable PDF</td><td><code>files/</code> folder</td><td>Copy file here, link with <code>/files/name.pdf</code></td></tr>
+    <tr><td>Add an image</td><td><code>images/</code> folder</td><td>Copy file here, reference with <code>/images/name.jpg</code></td></tr>
+    <tr><td>The site URL</td><td><code>_config.yml</code></td><td><code>url:</code> field</td></tr>
+  </table>
+
+  <div class="callout tip">After making any edit, save the file and commit + push to GitHub. The site will rebuild automatically in about 1–2 minutes. Visit your GitHub repository → Actions tab to see the build status.</div>
+
+  <div style="margin-top:60px; text-align:center; color:#9e9e9e; font-size:9pt; border-top:1px solid #e0e0e0; padding-top:20px;">
+    Website Editing Guide &nbsp;·&nbsp; Academic Pages / Jekyll &nbsp;·&nbsp; Generated 2026-05-29
+  </div>
+
+</div>
+
+</body>
+</html>
