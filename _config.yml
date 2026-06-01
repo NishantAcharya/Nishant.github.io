@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale: "en-US"
 site_theme: "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title: "YNishant Acharya"
+title: "Nishant (Nish) Acharya | PhD Student"
 title_separator: "-"
 name: &name "Nishant Acharya" # Update this with your name, this is used in the author profile and as the default author for posts
 description: &description "Nishant Acharya's academic portfolio" # Update this with a general description of your site, this is the default if not overridden by a page
