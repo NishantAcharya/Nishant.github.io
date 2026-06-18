@@ -20,11 +20,11 @@ IMPLY Lab. My research interests lie at the intersection of internet measurement
 
 My research is advised by <u>Prof. Alexander Gamero-Garrido</u>. Through our extended group, I also collborate <u> Prof. David Choffnes </u>, <u> Prof. Elizabeth Belding </u>. Addtionally through Internet Society's Pulse Research Fellowship (2025), I have had the privilege of working with <u>Amreesh Phokeer</u> , <u> Vasillis Giotsas </u> and <u> Prof. Pedro Marcos </u>
 
-In my free time, I love to write poetry, cook mixed cusine dishes and go for long bike rides.
-
 I am currently working on projects related to:
 * Identifying public infrastructure in bulk
 * Quantifying the criticality of public infrastructure
+
+In my free time, I love to write poetry, cook mixed cusine dishes and go for long bike rides.
 
 # News
 
