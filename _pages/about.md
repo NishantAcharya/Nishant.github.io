@@ -13,8 +13,6 @@ redirect_from:
 ## Internet Measurement | Network Topology | Network Performance
 {: .page__subtitle}
 
----
-
 {{ site.author.year }}th Year PhD Student at UC Davis, working with Dr. Gamero-Garrido on Network Infrastructure identification and measurement.
 
 # News
