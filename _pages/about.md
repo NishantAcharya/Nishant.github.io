@@ -32,6 +32,7 @@ I am currently working on projects related to:
 * 07/2025: "Quantifying the impact of IXP shutdowns" accepted at IMC 2025 Student Workshop!
 * 03/2025: Pulse Research Fellow (2025) -- Awarded a competive $17,000 fellowship by the internet society to study IXP resillience!
 * 03/2025: Attended PAM 2025
+* 01/2025: Gave a guest lecture on BGP for ECS 152A - Computer Networks
 
 
 # Service
