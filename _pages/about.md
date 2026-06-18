@@ -1,16 +1,14 @@
 ---
 permalink: /
-title: "Nishant (Nish) Acharya"
+title: "Nishant Acharya"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-# Nishant Acharya
-<small>Computer Scientist</small>
-<br>
-<small>Internet Measurement | Network Topology | Network Performance</small>
+## Network Researcher
+## Internet Measurement | Network Topology | Network Performance
 
 ---
 
