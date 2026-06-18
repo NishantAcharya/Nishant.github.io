@@ -92,6 +92,8 @@ publication_category:
     title: "Conference Papers"
   submissions:
     title: "Submissions"
+  NonArchival:
+    title: "Non-Archival Publications"
 
 # Site Settings
 teaser: # filename of teaser fallback teaser image placed in /images/ for social media previews
