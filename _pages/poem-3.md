@@ -4,6 +4,9 @@ title: "Maize Maze"
 author_profile: true
 ---
 
+{% include base_path %}
+[← Back to Extra]({{ base_path }}/extra/)
+
 <!-- TODO: add poem text -->
 Welcome to the maize maze!
 Don't delay, don't linger, don't stay —

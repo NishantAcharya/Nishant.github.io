@@ -4,6 +4,9 @@ title: "Duel"
 author_profile: true
 ---
 
+{% include base_path %}
+[← Back to Extra]({{ base_path }}/extra/)
+
 <!-- TODO: add poem text -->
 Five steps, three counts, one shot
 And the time for us stopped

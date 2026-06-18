@@ -4,6 +4,9 @@ title: "MAD"
 author_profile: true
 ---
 
+{% include base_path %}
+[← Back to Extra]({{ base_path }}/extra/)
+
 <!-- TODO: add poem text -->
 
 'M' is for a manic desire.

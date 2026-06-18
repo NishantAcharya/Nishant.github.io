@@ -4,6 +4,9 @@ title: "Thorns"
 author_profile: true
 ---
 
+{% include base_path %}
+[← Back to Extra]({{ base_path }}/extra/)
+
 <!-- TODO: add poem text -->
 A picture to paint, of thorns,
 Coiled on a sternum of all,

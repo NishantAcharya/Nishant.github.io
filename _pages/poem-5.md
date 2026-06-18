@@ -4,6 +4,9 @@ title: "A day in Madison"
 author_profile: true
 ---
 
+{% include base_path %}
+[← Back to Extra]({{ base_path }}/extra/)
+
 <!-- TODO: add poem text -->
 The gall of fall, to be so late and brief,
 With colors bright and memories all around,
