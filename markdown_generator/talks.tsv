@@ -1,4 +1,4 @@
 title	type	url_slug	venue	date	location	talk_url	description
 Quatifying the impact of IXP disruption	Talk	talk-1	Pulse Internet Measurement Forum	2025-12-08	Barcelona, Spain	https://youtu.be/wPG6Fswb2vo?si=zkoFRRTXqKwfrcxd	A deep dive into the impact of IX.br Sao Paulo fully or partially going down on other IXPs
 Preliminary talk on Australian IXP distruption impact	Talk	talk-2	Internet Measurement Conference	2025-08-27	Madison,WI, USA		A preliminary talk about using inferential methodologies to analyze the importance of subsections of Australian IXPs
-
+Guest Lecture : Border Gateway Protocol (BGP)	Talk	talk-3	University of California, Davis	2025-01-23	Davis, CA, USA		A guest lecture for an undergraduate course on computer networks about the Border Gateway Protocol (BGP)
