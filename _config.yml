@@ -23,7 +23,7 @@ repository: "NishantAcharya/Nishant.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar: "images/profile_pic_1.png"
+  avatar: "profile_pic_1.png"
   name: "Nishant Acharya"
   pronouns: "He/Him" # example: "she/her"
   bio: " Hello! My name is Nishant Acharya, and I am a 5th year PhD Student at UC Davis working with Dr. Gamero-Garrido"
