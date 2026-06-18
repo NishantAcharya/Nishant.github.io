@@ -36,7 +36,7 @@ I am currently working on projects related to:
 
 # Service
 
----
+
 ## Program Comittee
 {: .page__subtitle}
 * 2025: ACM IMC Shadow TPC
