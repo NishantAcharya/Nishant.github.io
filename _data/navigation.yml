@@ -23,6 +23,9 @@ main:
   - title: "Articles"
     url: /year-archive/
 
+  - title: "Extra"
+    url: /extra/
+
   # - title: "CV"
   #   url: /files/cv.pdf
 
