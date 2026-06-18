@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale: "en-US"
-site_theme: "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+site_theme: "mint" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title: "Nishant (Nish) Acharya | PhD Student"
 title_separator: "-"
 name: &name "Nishant Acharya" # Update this with your name, this is used in the author profile and as the default author for posts
@@ -24,14 +24,14 @@ repository: "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar: "profile.png"
+  avatar: "profile_pic_1.png"
   name: "Nishant Acharya"
-  pronouns: # example: "she/her"
-  bio: "Short biography for the left-hand sidebar"
-  location: "Earth"
-  employer: "Red Brick University"
+  pronouns: "He/Him" # example: "she/her"
+  bio: " Hello"
+  location: "Davis, CA"
+  employer: "University of California, Davis"
   uri: # URL
-  email: "none@example.org"
+  email: "nacharya(at)ucdavis(dot)edu"
 
   # Academic websites
   academia: # URL
@@ -57,7 +57,7 @@ author:
 
   # Social media
   artstation: # Username
-  bluesky: "bsky.app" # Replace this with you Bluesky username
+  bluesky: # Replace this with you Bluesky username
   facebook: # Username
   flickr: # Username
   foursquare: # Username
