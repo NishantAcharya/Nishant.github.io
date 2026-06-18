@@ -26,8 +26,8 @@ author:
   avatar: "profile_pic_1.png"
   name: "Nishant Acharya"
   pronouns: "He/Him" # example: "she/her"
-  year: "5"
-  bio: f"{author.year}th Year PhD Student at UC Davis, working with Dr. Gamero-Garrido on Network Infrastructure identification and measurement."
+  year: 5 # Update this once per year - referenced globally via {{ site.author.year }}
+  bio: "PhD Student at UC Davis, working with Dr. Gamero-Garrido on Network Infrastructure identification and measurement."
   location: "Davis, CA"
   employer: "University of California, Davis"
   uri: # URL
