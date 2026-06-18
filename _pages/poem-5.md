@@ -8,8 +8,8 @@ author_profile: true
 [← Back to Extra]({{ base_path }}/extra/)
 
 <!-- TODO: add poem text -->
-The gall of fall, to be so late and brief,
-With colors bright and memories all around,
-What joy, what mirth, beneath each crunchy leaf,
-With spice pumpkin and wine port for relief,
-What can I say? Sweet fall, thou art now found!
+The gall of fall, to be so late and brief,\
+With colors bright and memories all around,\
+What joy, what mirth, beneath each crunchy leaf,\
+With spice pumpkin and wine port for relief,\
+What can I say? Sweet fall, thou art now found!\
