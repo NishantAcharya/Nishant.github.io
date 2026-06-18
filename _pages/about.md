@@ -10,10 +10,19 @@ redirect_from:
 ## Network Researcher
 {: .page__subtitle}
 
-## Internet Measurement | Network Topology | Network Performance
+## Internet Measurement | Network Topology | Network Resillience
 {: .page__subtitle}
 
-{{ site.author.year }}th Year PhD Student at UC Davis, working with Dr. Gamero-Garrido on Network Infrastructure identification and measurement.
+
+
+I am a {{ site.author.year }}th Year PhD Student at the Graduate Group of Computer Science at University of California Davis, where I am a member of the
+IMPLY Lab. My research interests lie at the intersection of internet measurement, network topology and network resillience. I focus on creating pipelines to identify and quantify critical internet infrastructue, to advance the understanding of infrastructure dependence and resillence.
+
+My research is advised by <u>Prof. Alexander Gamero-Garrido</u>. Through our extended group, I also collborate <u> Prof. David Choffnes </u>, <u> Prof. Elizabeth Belding </u>. Addtionally through Internet Society's Pulse Research Fellowship (2025), I have had the privilege of working with <u>Amreesh Phokeer</u> , <u> Vasillis Giotsas </u> and <u> Prof. Pedro Marcos </u>
+
+I am currently working on projects related to:
+* Identifying public infrastructure in bulk
+* Quantifying the criticality of public infrastructure
 
 # News
 
