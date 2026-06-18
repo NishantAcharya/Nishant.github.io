@@ -48,6 +48,13 @@
   font-size: $type-size-4;
 }
 
+.page__subtitle {
+  margin-top: 0;
+  font-size: $type-size-4;
+  font-weight: normal;
+  color: var(--global-text-color-light);
+}
+
 .page__content {
 
   h2 {

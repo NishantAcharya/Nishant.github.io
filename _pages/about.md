@@ -8,7 +8,10 @@ redirect_from:
 ---
 
 ## Network Researcher
+{: .page__subtitle}
+
 ## Internet Measurement | Network Topology | Network Performance
+{: .page__subtitle}
 
 ---
 
