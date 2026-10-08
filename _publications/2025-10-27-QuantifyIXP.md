@@ -6,6 +6,7 @@ permalink: /publication/Quantifying_the_Impact_of_IXP
 excerpt: 'Non-Archival work regading quantifying IXP shutdown impact'
 date: 2025-10-27
 venue: 'IMC 2025 Student Workshop'
+venue_prefix: 'Submitted to'
 slidesurl: 
 paperurl: 
 bibtexurl: 
