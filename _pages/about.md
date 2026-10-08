@@ -23,6 +23,7 @@ My research is advised by <u>Prof. Alexander Gamero-Garrido</u>. Through our ext
 I am currently working on projects related to:
 * Identifying public infrastructure in bulk
 * Quantifying the criticality of public infrastructure
+* Safeguarding public infrastructure against agentic workloads
 
 In my free time, I love to write poetry, cook mixed cusine dishes and go for long bike rides.
 
